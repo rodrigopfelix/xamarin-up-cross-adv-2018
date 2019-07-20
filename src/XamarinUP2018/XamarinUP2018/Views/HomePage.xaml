@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:XamarinUP2018.Views;assembly=XamarinUP2018"
              mc:Ignorable="d"
-             x:Class="XamarinUP2018.Views.HomePage">
-    <ContentPage.Content>
+             x:Class="XamarinUP2018.Views.HomePage"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom">
+    <!--<ContentPage.Content>
         <StackLayout Padding="20">
             <Entry Visual="Material" Text="{Binding Text}" />
             <Label Text="{Binding Text}" />
@@ -14,5 +17,10 @@
                 IsVisible="{Binding IsBusy}" 
                 IsRunning="{Binding IsBusy}" />
         </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    </ContentPage.Content>-->
+    <TabbedPage.Children>
+        <views:FeedPage Title="Feed" IconImageSource="baseline_rss_feed_black_48.png" />
+        <views:FeedPage Title="History" IconImageSource="baseline_history_black_48.png" />
+        <views:FeedPage Title="About" IconImageSource="baseline_help_outline_black_48.png" />
+    </TabbedPage.Children>
+</TabbedPage>

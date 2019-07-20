@@ -19,13 +19,17 @@ namespace XamarinUP2018
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(HomePage)}");
+            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(OnBoardingPage)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>(nameof(NavigationPage));
             containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>(nameof(HomePage));
+            containerRegistry.RegisterForNavigation<OnBoardingPage, OnBoardingViewModel>(nameof(OnBoardingPage));
+            containerRegistry.RegisterForNavigation<FeedPage, FeedViewModel>(nameof(FeedPage));
+            containerRegistry.RegisterForNavigation<HistoryPage, HistoryViewModel>(nameof(HistoryPage));
+            containerRegistry.RegisterForNavigation<AboutPage, AboutViewModel>(nameof(AboutPage));
         }
         
         protected override void OnStart()

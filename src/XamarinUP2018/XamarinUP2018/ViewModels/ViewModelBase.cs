@@ -3,7 +3,6 @@ using Prism.Navigation;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
 namespace XamarinUP2018.ViewModels
 {
@@ -17,8 +16,8 @@ namespace XamarinUP2018.ViewModels
         public INavigationService NavigationService { get; }
 
         private bool isBusy;
-
-        public bool IsBusy {
+        public bool IsBusy
+        {
             get => isBusy;
             set => SetProperty(ref isBusy, value);
         }
@@ -29,12 +28,11 @@ namespace XamarinUP2018.ViewModels
         {
             if (IsBusy)
                 return;
-            IsBusy = true;
-
             try
             {
                 IsBusy = true;
                 await theBusyAction();
+
             }
             catch (Exception ex)
             {
@@ -42,14 +40,13 @@ namespace XamarinUP2018.ViewModels
             }
             finally
             {
-                IsBusy = false; 
+                IsBusy = false;
             }
         }
 
+
         public virtual void OnNavigatedFrom(INavigationParameters parameters) { }
-
         public virtual void OnNavigatedTo(INavigationParameters parameters) { }
-
         public virtual void OnNavigatingTo(INavigationParameters parameters) { }
     }
 }

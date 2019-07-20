@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace XamarinUP2018.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class OnBoardingView : ContentView
+    public partial class OnBoardingPage : ContentPage
     {
-        public OnBoardingView()
+        public OnBoardingPage()
         {
             InitializeComponent();
         }
